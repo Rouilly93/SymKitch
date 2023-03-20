@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Connexion - SymKitch'Pro{% endblock %}
+
+{% block body %}
+    <div class="loginForm position-relative">
+        <img src="/uploads/Form_Login_bg.jpg" class="img-custom" alt="Image de fond">
+        <div class="col-md-4 justify-content-center shadow-lg bg-dark text-light z-index formLogin rounded">
+            {% if error %}
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <strong>{{ error.messageKey|trans(error.messageData, 'security') }}</strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            {% endif %}
+            <h1 class="mt-0">Connexion</h1>
+            <form method="post" class="w3-container rounded-bottom w3-card-4 bg-light">
+                {% if app.user %}
+                    <div class="mb-3">
+                        Salut {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Déconnexion</a>
+                    </div>
+                {% endif %}
+                <br>
+                <p>
+                    <label class="text-dark">Email</label><br>
+                    <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
+                </p>
+                <p>
+                    <label class="text-dark">Mot de passe</label><br>
+                    <input type="password" name="password" id="inputPassword" class="form-control" required autocomplete="current-password">
+                </p>
+                <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+
+                <br>
+                <div class="w3-row">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            Se souvenir de moi
+                        </label>
+                    </div>
+                </div>
+                <div class="w3-row mb-5">
+                    <div class="w3-col m12 mb-5 w3-center">
+                        <button type="submit" class="btn btn-dark" style="width:50%">Connexion &nbsp; ❯</button>
+                    </div>
+                    <div class="w3-col m12 w3-center">
+                        <p class="mt-2 text-dark">Vous avez oublié votre mot de passe ?<br>
+                        <a href="#" class="text-primary">Réinitialiser mon mot de passe</a></p>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}
+

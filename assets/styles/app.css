@@ -1,0 +1,96 @@
+/* Sélecteur Universel */
+* {
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+/* Navvbar */
+nav {
+   border: 2mm inset lightslategray;
+}
+
+.titleUser a{
+    font-family: 'Roboto Condensed';
+}
+
+.product a{
+    font-family: 'Lato';
+}
+
+.brand a{
+    text-decoration: none;
+}
+
+nav .title {
+    font-family: 'Kaushan Script';
+    font-size: 1.5rem;
+}
+
+nav li a:hover {
+    color: lightslategray;
+    background-color: none;
+}
+
+btn:after{
+   color: lightslategray; 
+}
+    /* Dropdown */
+    .dropdown-menu{
+        border: 2mm outset white !important;
+    }
+    .dropdown-menu a:hover {
+        color: black !important;
+        background-color: white !important;
+    }
+
+/* Formulaire d'Inscription */
+
+.img_register {
+    /* position: absolute; */
+    top: 50%;
+    /* left: 50%; */
+    transform: translate(-50%, -50%);
+}
+
+.form_bg {
+    position: relative;
+}
+
+.registerForm {
+    background-image: url("/public/uploads/Form_Register_Bg.jpg");
+    height: 85vh;
+}
+
+.pad {
+    padding-top: 100px;
+}
+/* Connexion */
+
+.loginForm {
+    position: relative;
+    object-fit: cover;
+
+    /* background: url("/public/uploads/Form_Login_bg.jpg") no-repeat; */
+}
+
+.formLogin {
+    position: absolute;
+    z-index: 1000;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+}
+
+.img-custom {
+    width: 100%;
+    height: 85vh;
+}
+
+/* Footer */
+footer {
+    color: white;
+}
+
